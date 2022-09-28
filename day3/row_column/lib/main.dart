@@ -1,20 +1,20 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:container/home.dart';
 import 'package:flutter/material.dart';
+import 'package:row_column/row_column.dart';
 
 void main() {
-  runApp(Container());
+  runApp(MyWidget());
 }
 
-class Container extends StatelessWidget {
-  const Container({super.key});
+class MyWidget extends StatelessWidget {
+  const MyWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: Row_column_demo(),
     );
   }
 }
