@@ -14,7 +14,8 @@ class Home extends StatelessWidget {
         title: Text('Test project'),
       ),
       body: Container(
-        alignment: Alignment.center,
+        padding: EdgeInsets.fromLTRB(10, 0, 0, 10),
+        alignment: Alignment.bottomLeft,
         margin: EdgeInsets.all(20),
         height: 250,
         decoration: BoxDecoration(
@@ -24,8 +25,7 @@ class Home extends StatelessWidget {
               topRight: Radius.circular(200),
             )),
         child: Text(
-          'hello...',
-          textAlign: TextAlign.bottomLeft,
+          'hello,                                              how are you?',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 25,
