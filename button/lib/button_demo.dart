@@ -133,7 +133,7 @@ class ButtonDemo extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
-                Text('This is Customized Button'),
+                Text('Those are Customized Button'),
                 SizedBox(
                   height: 20,
                 ),
@@ -180,6 +180,56 @@ class ButtonDemo extends StatelessWidget {
                 ),
 
                 //end
+              ],
+            ),
+
+            SizedBox(
+              height: 20,
+            ),
+            //another custom button
+
+            Column(
+              children: [
+                Container(
+                  height: 50,
+                  width: 150,
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 224, 236, 238),
+                    boxShadow: [
+                      BoxShadow(
+                        offset: Offset(20, 20),
+                        blurRadius: 30,
+                      )
+                    ],
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 110,
+                        height: 50,
+                        decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 37, 226, 12),
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(100),
+                                bottomLeft: Radius.circular(100),
+                                bottomRight: Radius.circular(170))),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 13, vertical: 15),
+                          child: Text(
+                            'WhatsApp',
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                      Icon(Icons.whatsapp)
+                    ],
+                  ),
+
+                  //end
+                ),
               ],
             )
           ],
