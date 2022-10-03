@@ -17,6 +17,10 @@ class ButtonDemo extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text('Those are Pre Made BUtton'),
+            SizedBox(
+              height: 15,
+            ),
             //text button
             TextButton(
                 onPressed: () {},
@@ -122,6 +126,62 @@ class ButtonDemo extends StatelessWidget {
               height: 10,
             ),
             //end
+
+            //customized button
+            Column(
+              children: [
+                SizedBox(
+                  height: 20,
+                ),
+                Text('This is Customized Button'),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  height: 60,
+                  width: 180,
+                  decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 233, 225, 225),
+                      boxShadow: [
+                        BoxShadow(offset: Offset(0, 0), blurRadius: 25)
+                      ],
+                      borderRadius: BorderRadius.circular(25)),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 60,
+                        width: 60,
+                        decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 235, 221, 95),
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(50),
+                                bottomLeft: Radius.circular(50),
+                                topRight: Radius.circular(130))),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 15, vertical: 15),
+                          child: Icon(
+                            Icons.snapchat,
+                            color: Color.fromARGB(255, 15, 15, 15),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 12, vertical: 15),
+                        child: Text(
+                          'Snapchat',
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+
+                //end
+              ],
+            )
           ],
         ),
       ),
