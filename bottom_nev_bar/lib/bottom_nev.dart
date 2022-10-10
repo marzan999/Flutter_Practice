@@ -68,7 +68,7 @@ class _Bottom_Nev_DemoState extends State<Bottom_Nev_Demo> {
                 ),
                 GButton(
                   icon: Icons.architecture,
-                  text: 'Achievement',
+                  text: 'Art Work',
                   backgroundColor: Color.fromARGB(255, 7, 197, 255),
                 ),
                 GButton(
