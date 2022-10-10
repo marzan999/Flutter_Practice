@@ -34,7 +34,7 @@ class _Bottom_Nev_DemoState extends State<Bottom_Nev_Demo> {
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Color.fromARGB(255, 216, 212, 171),
           boxShadow: [
             BoxShadow(
               blurRadius: 20,
@@ -74,7 +74,7 @@ class _Bottom_Nev_DemoState extends State<Bottom_Nev_Demo> {
                 GButton(
                   icon: Icons.sign_language,
                   text: 'ECA',
-                  backgroundColor: Color.fromARGB(255, 29, 32, 226),
+                  backgroundColor: Color.fromARGB(255, 112, 114, 224),
                 ),
               ],
               selectedIndex: _selectedIndex,
