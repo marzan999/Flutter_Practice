@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:routing/black.dart';
 import 'package:routing/blue.dart';
@@ -12,15 +14,21 @@ class White extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromARGB(255, 177, 174, 174),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Text('Click any color',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+              SizedBox(
+                height: 10,
+              ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   MaterialButton(
+                    padding: EdgeInsets.symmetric(vertical: 80, horizontal: 80),
                     color: Colors.red,
                     onPressed: () {
                       Navigator.of(context).pushReplacement(
@@ -28,9 +36,10 @@ class White extends StatelessWidget {
                     },
                   ),
                   SizedBox(
-                    height: 10,
+                    width: 10,
                   ),
                   MaterialButton(
+                    padding: EdgeInsets.symmetric(vertical: 80, horizontal: 80),
                     color: Colors.green,
                     onPressed: () {
                       Navigator.of(context).pushReplacement(
@@ -42,11 +51,15 @@ class White extends StatelessWidget {
                   ),
                 ],
               ),
+              SizedBox(
+                height: 10,
+              ),
 
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   MaterialButton(
+                    padding: EdgeInsets.symmetric(vertical: 80, horizontal: 80),
                     color: Colors.black,
                     onPressed: () {
                       Navigator.of(context).pushReplacement(
@@ -54,9 +67,10 @@ class White extends StatelessWidget {
                     },
                   ),
                   SizedBox(
-                    height: 10,
+                    width: 10,
                   ),
                   MaterialButton(
+                    padding: EdgeInsets.symmetric(vertical: 80, horizontal: 80),
                     color: Colors.yellow,
                     onPressed: () {
                       Navigator.of(context).pushReplacement(
@@ -68,11 +82,15 @@ class White extends StatelessWidget {
                   ),
                 ],
               ),
+              SizedBox(
+                height: 10,
+              ),
 
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   MaterialButton(
+                    padding: EdgeInsets.symmetric(vertical: 80, horizontal: 80),
                     color: Colors.orange,
                     onPressed: () {
                       Navigator.of(context).pushReplacement(
@@ -80,9 +98,10 @@ class White extends StatelessWidget {
                     },
                   ),
                   SizedBox(
-                    height: 10,
+                    width: 10,
                   ),
                   MaterialButton(
+                    padding: EdgeInsets.symmetric(vertical: 80, horizontal: 80),
                     color: Colors.blue,
                     onPressed: () {
                       Navigator.of(context).pushReplacement(
