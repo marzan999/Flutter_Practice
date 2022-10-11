@@ -40,7 +40,7 @@ class Yellow extends StatelessWidget {
             Text('If you want to go any color, then click this color',
                 style: TextStyle(
                     fontSize: 18,
-                    color: Colors.white,
+                    color: Colors.black,
                     fontWeight: FontWeight.bold)),
             SizedBox(
               height: 10,
