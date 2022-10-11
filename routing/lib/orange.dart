@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:routing/black.dart';
+import 'package:routing/blue.dart';
+import 'package:routing/green.dart';
+import 'package:routing/red.dart';
 import 'package:routing/white.dart';
+import 'package:routing/yellow.dart';
 
 class Orange extends StatelessWidget {
   const Orange({super.key});
@@ -30,8 +35,60 @@ class Orange extends StatelessWidget {
               child: Text('Go to HOME'),
             ),
             SizedBox(
+              height: 80,
+            ),
+            Text('If you want to go any color, then click this color',
+                style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold)),
+            SizedBox(
               height: 10,
             ),
+            Column(
+              children: [
+                MaterialButton(
+                  color: Colors.green,
+                  onPressed: () {
+                    //Navigator.of(context).pop();
+                    Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (context) => Green()));
+                  },
+                ),
+                MaterialButton(
+                  color: Colors.black,
+                  onPressed: () {
+                    //Navigator.of(context).pop();
+                    Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (context) => Black()));
+                  },
+                ),
+                MaterialButton(
+                  color: Colors.yellow,
+                  onPressed: () {
+                    //Navigator.of(context).pop();
+                    Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (context) => Yellow()));
+                  },
+                ),
+                MaterialButton(
+                  color: Colors.blue,
+                  onPressed: () {
+                    //Navigator.of(context).pop();
+                    Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (context) => Blue()));
+                  },
+                ),
+                MaterialButton(
+                  color: Colors.red,
+                  onPressed: () {
+                    //Navigator.of(context).pop();
+                    Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (context) => Red()));
+                  },
+                ),
+              ],
+            )
           ],
         ),
       ),
