@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
           width: double.infinity,
           decoration: BoxDecoration(
               color: Color.fromARGB(255, 207, 207, 206),
-              borderRadius: BorderRadius.circular(35)),
+              borderRadius: BorderRadius.circular(25)),
           child: SingleChildScrollView(
             child: Column(
               children: [
