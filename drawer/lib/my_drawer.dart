@@ -119,6 +119,7 @@ class DrawerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
+      hoverColor: Colors.grey,
       padding: EdgeInsets.only(bottom: 15),
       onPressed: onTap,
       child: Row(
