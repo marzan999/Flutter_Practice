@@ -62,11 +62,75 @@ class MyDrawer extends StatelessWidget {
           Expanded(
             flex: 7,
             child: Container(
+              padding: EdgeInsets.all(20),
               child: Column(
-                children: [],
+                children: [
+                  DrawerItem(
+                    icon: Icons.call,
+                    title: 'Call',
+                    onTap: () {},
+                  ),
+                  DrawerItem(
+                    icon: Icons.mail,
+                    title: 'Email',
+                    onTap: () {},
+                  ),
+                  DrawerItem(
+                    icon: Icons.message,
+                    title: 'Message',
+                    onTap: () {},
+                  ),
+                  DrawerItem(
+                    icon: Icons.add_chart,
+                    title: 'Chart',
+                    onTap: () {},
+                  ),
+                  Spacer(),
+                  Divider(
+                    thickness: 2,
+                    color: Colors.blue,
+                  ),
+                  DrawerItem(
+                    icon: Icons.facebook,
+                    title: 'Facebook',
+                    onTap: () {},
+                  ),
+                  DrawerItem(
+                    icon: Icons.whatsapp,
+                    title: 'WhatsApp',
+                    onTap: () {},
+                  ),
+                ],
               ),
             ),
           ),
+        ],
+      ),
+    );
+  }
+}
+
+class DrawerItem extends StatelessWidget {
+  String? title;
+  IconData? icon;
+  VoidCallback? onTap;
+  DrawerItem({this.icon, this.onTap, this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialButton(
+      padding: EdgeInsets.only(bottom: 15),
+      onPressed: onTap,
+      child: Row(
+        children: [
+          Icon(icon),
+          SizedBox(
+            width: 15,
+          ),
+          Text(
+            '$title',
+            style: TextStyle(fontSize: 20),
+          )
         ],
       ),
     );
