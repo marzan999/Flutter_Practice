@@ -14,7 +14,7 @@ class Page2 extends StatelessWidget {
           Expanded(
               flex: 4,
               child: Container(
-                color: Colors.green,
+                color: Color.fromARGB(255, 111, 218, 115),
                 child: Column(
                   children: [
                     Padding(
@@ -66,7 +66,7 @@ class Page2 extends StatelessWidget {
           Expanded(
               flex: 2,
               child: Container(
-                color: Colors.green,
+                color: Color.fromARGB(255, 111, 218, 115),
                 child: Column(
                   children: [
                     Padding(
@@ -106,7 +106,7 @@ class Page2 extends StatelessWidget {
           Expanded(
               flex: 2,
               child: Container(
-                color: Colors.green,
+                color: Color.fromARGB(255, 111, 218, 115),
                 child: Column(
                   children: [
                     Padding(
@@ -159,7 +159,7 @@ class Page2 extends StatelessWidget {
           Expanded(
               flex: 2,
               child: Container(
-                color: Colors.green,
+                color: Color.fromARGB(255, 111, 218, 115),
                 child: Column(
                   children: [
                     Padding(
