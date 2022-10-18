@@ -27,49 +27,65 @@ class _Page2State extends State<Page2> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-            color: Color.fromARGB(255, 219, 223, 184),
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(25), topRight: Radius.circular(25))),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 10,
+    return Container(
+      decoration: BoxDecoration(
+          color: Color.fromARGB(255, 219, 223, 184),
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(35), topRight: Radius.circular(35))),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: TextField(
+              controller: _emailController,
+              decoration: InputDecoration(hintText: 'Enter your email'),
             ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: TextField(
-                controller: _emailController,
-                decoration: InputDecoration(hintText: 'Enter your email'),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: TextField(
+              controller: _passwordController,
+              decoration: InputDecoration(hintText: 'Enter your password'),
+            ),
+          ),
+          Expanded(
+              child: _image == null
+                  ? IconButton(
+                      onPressed: () {
+                        chooseFormCamera();
+                      },
+                      icon: Icon(Icons.camera_alt_sharp))
+                  : Image.file(File(_image!.path))),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Align(
+              alignment: Alignment.bottomRight,
+              child: Column(
+                children: [
+                  FloatingActionButton(
+                    onPressed: () {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => Page3()));
+                    },
+                    child: Icon(Icons.arrow_forward),
+                  ),
+                ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: TextField(
-                controller: _passwordController,
-                decoration: InputDecoration(hintText: 'Enter your password'),
-              ),
-            ),
-            Expanded(
-                child: _image == null
-                    ? IconButton(
-                        onPressed: () {
-                          chooseFormCamera();
-                        },
-                        icon: Icon(Icons.camera_alt_sharp))
-                    : Image.file(File(_image!.path))),
-          ],
-        ),
+          )
+        ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => Page3()));
-        },
-        child: Icon(Icons.arrow_forward),
-      ),
+
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      // Navigator.of(context)
+      //     .push(MaterialPageRoute(builder: (context) => Page3()));
+      //   },
+      //   child: Icon(Icons.arrow_forward),
+      // ),
     );
   }
 }
