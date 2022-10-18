@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, prefer_final_fields, sort_child_properties_last
 
 import 'package:flutter/material.dart';
 
@@ -10,6 +10,31 @@ class Page3 extends StatefulWidget {
 }
 
 class _Page3State extends State<Page3> {
+  List<String> _product = [
+    'Computer',
+    'Laptop',
+    'Mobile',
+    'Monitor',
+    'Camera',
+    'Mouse',
+    'Keyboard',
+  ];
+
+  final imgList = [
+    'images/laptop.jpeg',
+    'images/camera.jpeg',
+    'images/airpods.jpg',
+    'images/mobile.jpg',
+    'images/laptop.jpeg',
+    'images/camera.jpeg',
+    'images/airpods.jpg',
+    'images/mobile.jpg',
+    'images/laptop.jpeg',
+    'images/camera.jpeg',
+    'images/airpods.jpg',
+    'images/mobile.jpg',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -17,7 +42,7 @@ class _Page3State extends State<Page3> {
         body: Container(
           child: Column(
             children: [
-              SizedBox(height: 15),
+              SizedBox(height: 20),
               Text(
                 'Online Shopping',
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
@@ -32,7 +57,7 @@ class _Page3State extends State<Page3> {
                 ),
               ),
               SizedBox(
-                height: 15,
+                height: 25,
               ),
               Container(
                 height: 100,
@@ -197,9 +222,64 @@ class _Page3State extends State<Page3> {
               SizedBox(
                 height: 20,
               ),
-              Row(
-                children: [Text('data')],
-              )
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Categories',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                    ),
+                    Text(
+                      'view all',
+                      style: TextStyle(color: Colors.blue, fontSize: 18),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Container(
+                height: 50,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: _product.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
+                      child: Container(
+                        width: 100,
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 196, 195, 190),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: Center(
+                            child: Text(
+                          _product[index],
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        )),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              Expanded(
+                  child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: GridView.count(
+                    children: List.generate(imgList.length, (index) {
+                      return Container(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image.asset(imgList[index]),
+                        ),
+                      );
+                    }),
+                    crossAxisCount: 2),
+              )),
             ],
           ),
         ),
