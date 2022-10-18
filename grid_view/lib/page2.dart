@@ -58,7 +58,7 @@ class _Page2State extends State<Page2> {
                         onPressed: () {
                           chooseFormCamera();
                         },
-                        icon: Icon(Icons.camera))
+                        icon: Icon(Icons.camera_alt_sharp))
                     : Image.file(File(_image!.path))),
           ],
         ),
