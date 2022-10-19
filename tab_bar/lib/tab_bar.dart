@@ -56,7 +56,7 @@ class _TabBarDemoState extends State<TabBarDemo>
                       icon: Icon(Icons.man),
                     ),
                     Tab(
-                      icon: Icon(Icons.car_crash),
+                      icon: Icon(Icons.pedal_bike_sharp),
                     ),
                     Tab(
                       icon: Icon(Icons.house),

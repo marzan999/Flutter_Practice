@@ -6,7 +6,11 @@ class Page2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.yellow,
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              image: NetworkImage(
+                  "https://i0.wp.com/wallpapersfortech.com/wp-content/uploads/2020/09/Desert-Motocycle-HD-Wallpaper.jpg?fit=668%2C1080&ssl=1"),
+              fit: BoxFit.cover)),
     );
   }
 }
