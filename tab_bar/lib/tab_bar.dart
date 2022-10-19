@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:tab_bar/page1.dart';
 import 'package:tab_bar/page2.dart';
 import 'package:tab_bar/page3.dart';
+import 'package:tab_bar/page4.dart';
 
 class TabBarDemo extends StatefulWidget {
   const TabBarDemo({super.key});
@@ -17,7 +18,7 @@ class _TabBarDemoState extends State<TabBarDemo>
   TabController? tabController;
   @override
   void initState() {
-    tabController = TabController(length: 3, vsync: this);
+    tabController = TabController(length: 4, vsync: this);
     super.initState();
   }
 
@@ -61,6 +62,9 @@ class _TabBarDemoState extends State<TabBarDemo>
                     Tab(
                       icon: Icon(Icons.house),
                     ),
+                    Tab(
+                      icon: Icon(Icons.menu),
+                    ),
                   ]),
             ),
             Container(
@@ -74,6 +78,7 @@ class _TabBarDemoState extends State<TabBarDemo>
                 Page1(),
                 Page2(),
                 Page3(),
+                Page4(),
               ],
             ))
           ],
