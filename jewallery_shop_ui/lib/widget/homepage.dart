@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:jewallery_shop_ui/model/product_info.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HomeP extends StatelessWidget {
+  final a = ProductInfo.generatedProductList();
 
   @override
   Widget build(BuildContext context) {
@@ -101,7 +102,7 @@ class HomePage extends StatelessWidget {
                                 child: Column(
                                   children: [
                                     Image.asset(
-                                      'images/1.jpg',
+                                      a[index].image,
                                       fit: BoxFit.cover,
                                       height: 100,
                                       width: 140,
@@ -110,7 +111,7 @@ class HomePage extends StatelessWidget {
                                       height: 10,
                                     ),
                                     Text(
-                                      'Jewellery',
+                                      a[index].name,
                                       style: TextStyle(
                                           fontSize: 25,
                                           fontWeight: FontWeight.bold),
@@ -122,7 +123,7 @@ class HomePage extends StatelessWidget {
                             separatorBuilder: (_, index) => SizedBox(
                                   width: 10,
                                 ),
-                            itemCount: 20)),
+                            itemCount: a.length)),
                     SizedBox(
                       height: 20,
                     ),
@@ -153,7 +154,7 @@ class HomePage extends StatelessWidget {
                                   // childAspectRatio: 3 / 2,
                                   crossAxisSpacing: 20,
                                   mainAxisSpacing: 20),
-                          itemCount: 20,
+                          itemCount: a.length,
                           itemBuilder: (BuildContext ctx, index) {
                             return Container(
                               alignment: Alignment.center,
@@ -165,7 +166,7 @@ class HomePage extends StatelessWidget {
                                   Column(
                                     children: [
                                       Image.asset(
-                                        'images/2.png',
+                                        a[index].image,
                                         fit: BoxFit.cover,
                                         height: 100,
                                         width: double.infinity,
@@ -179,7 +180,7 @@ class HomePage extends StatelessWidget {
                                           padding: const EdgeInsets.only(
                                               top: 2, left: 5),
                                           child: Text(
-                                            'Jewellery',
+                                            a[index].name,
                                             style: TextStyle(
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 25),
@@ -196,7 +197,7 @@ class HomePage extends StatelessWidget {
                                               children: [
                                                 Text('Current Bid'),
                                                 Text(
-                                                  '\$2500',
+                                                  '\$' + a[index].price,
                                                   style: TextStyle(
                                                       color: Colors.orange,
                                                       fontWeight:
@@ -240,7 +241,7 @@ class HomePage extends StatelessWidget {
           bottomNavigationBar: BottomNavigationBar(items: [
             BottomNavigationBarItem(
                 icon: Icon(Icons.home),
-                label: 'Home',
+                label: '',
                 backgroundColor: Colors.black),
             BottomNavigationBarItem(
                 icon: Icon(Icons.attractions),
