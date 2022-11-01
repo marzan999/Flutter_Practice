@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:dark_mode/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -31,6 +33,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 ? Image.asset('images/1c.png')
                 : Image.asset('images/1b.jpg'),
 
+            SizedBox(
+              height: 25,
+            ),
             SwitchListTile(
                 title: Text(
                   "Change your theme",
