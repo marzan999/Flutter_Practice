@@ -34,7 +34,7 @@ class _NewContactState extends State<NewContact> {
                     borderRadius: BorderRadius.circular(25),
                   ),
                   label: Text('Name'),
-                  hintText: 'Please Enter Name',
+                  hintText: 'Please enter your name',
                   prefixIcon: Icon(Icons.person)),
             ),
             SizedBox(
@@ -47,7 +47,7 @@ class _NewContactState extends State<NewContact> {
                     borderRadius: BorderRadius.circular(25),
                   ),
                   label: Text('Phone'),
-                  hintText: 'Please Enter Phone Number',
+                  hintText: 'Please enter your phone number',
                   prefixIcon: Icon(Icons.call)),
             ),
             SizedBox(
