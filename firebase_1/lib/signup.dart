@@ -21,9 +21,13 @@ class _SignUpState extends State<SignUp> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Sign Up'),
+          title: Text(
+            'Sign Up',
+            style: TextStyle(
+                color: Colors.black, fontWeight: FontWeight.bold, fontSize: 25),
+          ),
           centerTitle: true,
-          backgroundColor: Color.fromARGB(255, 204, 180, 144),
+          backgroundColor: Color.fromARGB(255, 129, 200, 202),
         ),
         body: Padding(
           padding: const EdgeInsets.all(15.0),
@@ -34,6 +38,10 @@ class _SignUpState extends State<SignUp> {
                 decoration: InputDecoration(
                   hintText: 'Enter Your Email',
                   labelText: 'Email',
+                  prefixIcon: Icon(
+                    Icons.email,
+                    color: Colors.grey,
+                  ),
                   enabledBorder: OutlineInputBorder(
                       borderSide:
                           BorderSide(width: 3, color: Colors.greenAccent),
@@ -55,6 +63,10 @@ class _SignUpState extends State<SignUp> {
                 decoration: InputDecoration(
                   hintText: 'Enter Your Password',
                   labelText: 'Password',
+                  prefixIcon: Icon(
+                    Icons.password,
+                    color: Colors.grey,
+                  ),
                   enabledBorder: OutlineInputBorder(
                       borderSide:
                           BorderSide(width: 3, color: Colors.greenAccent),
@@ -82,6 +94,22 @@ class _SignUpState extends State<SignUp> {
                     var p = _passwordController.text;
                     Dbhelper db = Dbhelper();
                     db.signUp(e, p);
+
+                    showDialog(
+                      context: context,
+                      builder: (ctx) => AlertDialog(
+                        title: const Text("Success"),
+                        content: const Text("Registration Completed!"),
+                        actions: <Widget>[
+                          TextButton(
+                            onPressed: () {
+                              Navigator.of(ctx).pop();
+                            },
+                            child: Text("okay"),
+                          ),
+                        ],
+                      ),
+                    );
                   },
                   child: Text('Sign Up'))
             ],
