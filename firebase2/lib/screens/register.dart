@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -16,6 +17,19 @@ class _RegisterPageState extends State<RegisterPage> {
   TextEditingController _phoneController = TextEditingController();
   TextEditingController _ageController = TextEditingController();
   TextEditingController _addressController = TextEditingController();
+
+  Future addUser() async {
+    CollectionReference _users =
+        await FirebaseFirestore.instance.collection('register');
+
+    _users.add(({
+      'name': _nameController.text,
+      'phone': _phoneController.text,
+      'age': _ageController.text,
+      'address': _addressController.text
+    }));
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -148,6 +162,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Color.fromARGB(255, 92, 173, 95)),
                   onPressed: () {
+                    addUser();
                     showDialog(
                       context: context,
                       builder: (ctx) => AlertDialog(
