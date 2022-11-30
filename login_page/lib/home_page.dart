@@ -92,7 +92,7 @@ class _HomePageState extends State<HomePage> {
                       if (value!.isEmpty) {
                         return 'Email field required';
                       }
-                      if (!value!.contains('@gmail.com')) {
+                      if (!value.contains('@gmail.com')) {
                         return 'Invalid email';
                       }
                     }),
