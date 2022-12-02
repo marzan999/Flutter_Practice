@@ -22,7 +22,7 @@ class _AddCourseState extends State<AddCourse> {
   String? _imgUrl;
   chooseImageFromCG() async {
     ImagePicker _picker = ImagePicker();
-    _courseImage = await _picker.pickImage(source: ImageSource.camera);
+    _courseImage = await _picker.pickImage(source: ImageSource.gallery);
     setState(() {});
   }
 
