@@ -8,14 +8,14 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:student_management_system/screens/splash.dart';
 
-class AddCourse extends StatefulWidget {
-  const AddCourse({super.key});
+class UpdateCourse extends StatefulWidget {
+  const UpdateCourse({super.key});
 
   @override
-  State<AddCourse> createState() => _AddCourseState();
+  State<UpdateCourse> createState() => _UpdateCourseState();
 }
 
-class _AddCourseState extends State<AddCourse> {
+class _UpdateCourseState extends State<UpdateCourse> {
   TextEditingController _addcoursename = TextEditingController();
   TextEditingController _addcoursefee = TextEditingController();
   XFile? _courseImage;
@@ -92,7 +92,7 @@ class _AddCourseState extends State<AddCourse> {
                         MaterialPageRoute(builder: (context) => Splash()));
                   });
                 },
-                child: Text('Add Course'))
+                child: Text('Update Course'))
           ],
         ),
       ),

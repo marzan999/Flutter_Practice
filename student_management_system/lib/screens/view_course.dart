@@ -1,8 +1,11 @@
+// ignore_for_file: sort_child_properties_last, prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:student_management_system/screens/add_course.dart';
+import 'package:student_management_system/screens/update_course.dart';
 
 class ViewCourse extends StatefulWidget {
   const ViewCourse({super.key});
@@ -20,8 +23,24 @@ class _ViewCourseState extends State<ViewCourse> {
         isScrollControlled: true);
   }
 
+  updatenewCourse() {
+    return showModalBottomSheet(
+        context: context,
+        builder: (context) => UpdateCourse(),
+        backgroundColor: Colors.transparent,
+        isScrollControlled: true);
+  }
+
   Stream<QuerySnapshot> _courseStream =
       FirebaseFirestore.instance.collection("courses").snapshots();
+
+  deleteData(selectedData) {
+    return FirebaseFirestore.instance
+        .collection('courses')
+        .doc(selectedData)
+        .delete()
+        .then((value) => print('Data is deleted'));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +48,10 @@ class _ViewCourseState extends State<ViewCourse> {
       child: Scaffold(
           appBar: AppBar(
             title: Text("View Course"),
+            backgroundColor: Color.fromARGB(255, 182, 120, 28),
           ),
           floatingActionButton: FloatingActionButton(
+            backgroundColor: Color.fromARGB(255, 182, 120, 28),
             onPressed: () => addnewCourse(),
             child: Icon(Icons.add),
           ),
@@ -58,11 +79,61 @@ class _ViewCourseState extends State<ViewCourse> {
                           child: Stack(children: [
                             Column(
                               children: [
-                                Image.network(
-                                  data["img"],
-                                  height: 300,
-                                  width: double.infinity,
-                                  fit: BoxFit.cover,
+                                Stack(
+                                  children: [
+                                    Container(
+                                      child: Stack(
+                                        children: [
+                                          Image.network(
+                                            data["img"],
+                                            height: 300,
+                                            width: double.infinity,
+                                            fit: BoxFit.cover,
+                                          ),
+                                          Positioned(
+                                            child: Container(
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  MaterialButton(
+                                                    color: Colors.white,
+                                                    height: 40,
+                                                    minWidth: 40,
+                                                    onPressed: (() {
+                                                      updatenewCourse();
+                                                    }),
+                                                    child: Icon(
+                                                      Icons.edit,
+                                                      size: 25,
+                                                      color: Colors.blue,
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    width: 5,
+                                                  ),
+                                                  MaterialButton(
+                                                    color: Colors.white,
+                                                    height: 40,
+                                                    minWidth: 40,
+                                                    onPressed: (() {
+                                                      deleteData(document.id);
+                                                    }),
+                                                    child: Icon(
+                                                      Icons.delete,
+                                                      size: 25,
+                                                      color: Colors.red,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
                                 ),
                                 SizedBox(
                                   height: 10,
