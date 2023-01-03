@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:interview_ui_solve/model/food_info.dart';
+import 'package:interview_ui_solve/screens/cart.dart';
+import 'package:interview_ui_solve/screens/details.dart';
 
 class DisplayScreen extends StatefulWidget {
   const DisplayScreen({super.key});
@@ -93,75 +95,80 @@ class _DisplayScreenState extends State<DisplayScreen> {
               SizedBox(
                 height: 20,
               ),
-              Container(
-                height: 430,
-                child: ListView.builder(
-                    itemCount: 3,
-                    itemBuilder: (context, index) {
-                      return Card(
-                        color: Color.fromARGB(255, 105, 105, 105),
-                        child: Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: Container(
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Container(
-                                    child: Row(
-                                      children: [
-                                        Container(
-                                          height: 60,
-                                          width: 60,
-                                          decoration: BoxDecoration(
-                                              image: DecorationImage(
-                                                  image: NetworkImage(
-                                                    a[index].image,
-                                                  ),
-                                                  fit: BoxFit.cover),
-                                              borderRadius:
-                                                  BorderRadius.circular(10)),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 20),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                a[index].name,
-                                                style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 20),
-                                              ),
-                                              Text(a[index].description,
-                                                  style: TextStyle(
-                                                    color: Color.fromARGB(
-                                                        255, 192, 190, 190),
-                                                  )),
-                                            ],
+              InkWell(
+                onTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: ((context) => DetailsPage())));
+                },
+                child: Container(
+                  height: 430,
+                  child: ListView.builder(
+                      itemCount: 3,
+                      itemBuilder: (context, index) {
+                        return Card(
+                          color: Color.fromARGB(255, 105, 105, 105),
+                          child: Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: Container(
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Container(
+                                      child: Row(
+                                        children: [
+                                          Container(
+                                            height: 60,
+                                            width: 60,
+                                            decoration: BoxDecoration(
+                                                image: DecorationImage(
+                                                    image: NetworkImage(
+                                                      a[index].image,
+                                                    ),
+                                                    fit: BoxFit.cover),
+                                                borderRadius:
+                                                    BorderRadius.circular(10)),
                                           ),
-                                        ),
-                                      ],
+                                          Padding(
+                                            padding:
+                                                const EdgeInsets.only(left: 20),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  a[index].name,
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontWeight: FontWeight.bold,
+                                                      fontSize: 20),
+                                                ),
+                                                Text(a[index].description,
+                                                    style: TextStyle(
+                                                      color: Color.fromARGB(
+                                                          255, 192, 190, 190),
+                                                    )),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                  Container(
-                                    child: Text(
-                                      a[index].price,
-                                      style: TextStyle(
-                                          fontSize: 25,
-                                          color:
-                                              Color.fromARGB(255, 224, 228, 13),
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            )),
-                      );
-                    }),
+                                    Container(
+                                      child: Text(
+                                        a[index].price,
+                                        style: TextStyle(
+                                            fontSize: 25,
+                                            color:
+                                                Color.fromARGB(255, 224, 228, 13),
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              )),
+                        );
+                      }),
+                ),
               ),
               Container(
                 height: 70,
@@ -186,19 +193,24 @@ class _DisplayScreenState extends State<DisplayScreen> {
                           ),
                     ),
                  
-                    Container(
-                      height: 45,
-                      width: 140,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(13),
-                          color: Color.fromARGB(255, 130, 153, 130)),
-                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(Icons.shopping_cart,color: Color.fromARGB(255, 2, 245, 10),),
-                              Text(' Cart', style: TextStyle(color: Colors.white),)
-                            ],
-                          ),
+                    InkWell(
+                      onTap: () {
+                         Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Cart()));
+                      },
+                      child: Container(
+                        height: 45,
+                        width: 140,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(13),
+                            color: Color.fromARGB(255, 130, 153, 130)),
+                             child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(Icons.shopping_cart,color: Color.fromARGB(255, 2, 245, 10),),
+                                Text(' Cart', style: TextStyle(color: Colors.white),)
+                              ],
+                            ),
+                      ),
                     ),
                     
                   ],
