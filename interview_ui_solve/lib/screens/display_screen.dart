@@ -93,23 +93,9 @@ class _DisplayScreenState extends State<DisplayScreen> {
               SizedBox(
                 height: 20,
               ),
-              // ListView.builder(
-              //     itemCount: 3,
-              //     itemBuilder: ((context, index) {
-              //       return Container(
-              //         height: 100,
-              //         width: 200,
-              //         color: Colors.yellow,
-              //         child: Column(
-              //           children: [Text('data')],
-              //         ),
-              //       );
-              //     }))
-              // Text(a[1].name,style: TextStyle(color: Colors.white),),
               Container(
                 height: 430,
                 child: ListView.builder(
-                  
                     itemCount: 3,
                     itemBuilder: (context, index) {
                       return Card(
@@ -117,18 +103,59 @@ class _DisplayScreenState extends State<DisplayScreen> {
                         child: Padding(
                             padding: const EdgeInsets.all(10),
                             child: Container(
-                             
                               child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Container(
-                                    height: 60,
-                                    width: 60,
-                                    decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                        image: NetworkImage(a[index].image, ), fit: BoxFit.cover
-                                      ),
-                                        borderRadius:
-                                            BorderRadius.circular(10)),
+                                    child: Row(
+                                      children: [
+                                        Container(
+                                          height: 60,
+                                          width: 60,
+                                          decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                  image: NetworkImage(
+                                                    a[index].image,
+                                                  ),
+                                                  fit: BoxFit.cover),
+                                              borderRadius:
+                                                  BorderRadius.circular(10)),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 20),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                a[index].name,
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 20),
+                                              ),
+                                              Text(a[index].description,
+                                                  style: TextStyle(
+                                                    color: Color.fromARGB(
+                                                        255, 192, 190, 190),
+                                                  )),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    child: Text(
+                                      a[index].price,
+                                      style: TextStyle(
+                                          fontSize: 25,
+                                          color:
+                                              Color.fromARGB(255, 224, 228, 13),
+                                          fontWeight: FontWeight.bold),
+                                    ),
                                   )
                                 ],
                               ),
@@ -138,7 +165,44 @@ class _DisplayScreenState extends State<DisplayScreen> {
               ),
               Container(
                 height: 70,
-                color: Colors.yellow,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(13),
+                    color: Color.fromARGB(255, 114, 117, 114)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Container(
+                      height: 45,
+                      width: 140,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(13),
+                          color: Color.fromARGB(255, 130, 153, 130)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.home,color: Color.fromARGB(255, 2, 245, 10),),
+                              Text(' Home', style: TextStyle(color: Colors.white),)
+                            ],
+                          ),
+                    ),
+                 
+                    Container(
+                      height: 45,
+                      width: 140,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(13),
+                          color: Color.fromARGB(255, 130, 153, 130)),
+                           child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.shopping_cart,color: Color.fromARGB(255, 2, 245, 10),),
+                              Text(' Cart', style: TextStyle(color: Colors.white),)
+                            ],
+                          ),
+                    ),
+                    
+                  ],
+                ),
               )
             ],
           ),
