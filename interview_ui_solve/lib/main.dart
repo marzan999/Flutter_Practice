@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:interview_ui_solve/screens/display_screen.dart';
 
-
 void main() {
   runApp(const MyApp());
-}class MyApp extends StatelessWidget {
+}
+
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
