@@ -35,6 +35,7 @@ class HomePage extends StatelessWidget {
                             padding: const EdgeInsets.all(28.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
                                   'Card',
@@ -158,15 +159,12 @@ class HomePage extends StatelessWidget {
                                   BorderRadius.all(Radius.circular(100))),
                         ),
                       ),
-                      SizedBox(
-                        height: 20,
-                      ),
                       Align(
                         alignment: Alignment.bottomLeft,
                         child: Padding(
                           padding: const EdgeInsets.all(30.0),
                           child: Text(
-                            'Last Transaction',
+                            'Last Transactions:',
                             style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 30,
@@ -245,10 +243,71 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                         ),
+                      ),
+                      Spacer(),
+                      Container(
+                        height: 100,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(40),
+                                topRight: Radius.circular(40))),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 30, right: 30),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                height: 65,
+                                width: 65,
+                                decoration: BoxDecoration(
+                                    color: Colors.orange,
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(50))),
+                                child: Icon(
+                                  Icons.person,
+                                  color: Colors.white,
+                                  size: 55,
+                                ),
+                              ),
+                              Container(
+                                height: 65,
+                                width: 65,
+                                decoration: BoxDecoration(
+                                    color: Colors.blue,
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(50))),
+                                child: Center(
+                                  child: Text(
+                                    '\$',
+                                    style: TextStyle(
+                                        fontSize: 45,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                height: 65,
+                                width: 65,
+                                decoration: BoxDecoration(
+                                    color: Colors.grey,
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(50))),
+                                child: Icon(
+                                  Icons.check_circle_outline,
+                                  color: Colors.white,
+                                  size: 55,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       )
                     ],
                   ),
-                ))
+                )),
           ],
         ),
       ),
