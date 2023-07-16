@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
 
 import 'package:flutter/material.dart';
 
@@ -71,46 +71,27 @@ class HomePage extends StatelessWidget {
                                     Positioned(
                                       child: Container(
                                         height: 40,
-                                        width: 40,
+                                        width: 60,
                                         decoration: BoxDecoration(
-                                            color: Colors.blue,
+                                            color: const Color.fromARGB(
+                                                255, 146, 178, 204),
                                             borderRadius: BorderRadius.all(
                                                 Radius.circular(50))),
                                       ),
                                     ),
                                     Positioned(
+                                      // left: 20,
                                       child: Container(
                                         height: 40,
                                         width: 40,
                                         decoration: BoxDecoration(
-                                            color: Colors.black,
+                                            color: const Color.fromARGB(
+                                                255, 72, 152, 218),
                                             borderRadius: BorderRadius.all(
                                                 Radius.circular(50))),
                                       ),
                                     )
                                   ],
-
-                                  // child: Row(
-                                  //   children: [
-                                  //     Container(
-                                  //       height: 40,
-                                  //       width: 40,
-                                  //       decoration: BoxDecoration(
-                                  //           color: Colors.blue,
-                                  //           borderRadius: BorderRadius.all(
-                                  //               Radius.circular(50))),
-                                  //     ),
-                                  //     Container(
-
-                                  //       height: 40,
-                                  //       width: 40,
-                                  //       decoration: BoxDecoration(
-                                  //           color: Colors.blue,
-                                  //           borderRadius: BorderRadius.all(
-                                  //               Radius.circular(50))),
-                                  //     ),
-                                  //   ],
-                                  // ),
                                 )
                               ],
                             ),
@@ -158,8 +139,19 @@ class HomePage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.all(15.0),
                         child: Container(
+                          //child: Text('/$1084'),
+                          child: Center(
+                            child: Text(
+                              '\$1084',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 40,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
                           height: 180,
                           width: 180,
+
                           decoration: BoxDecoration(
                               color: Colors.blue,
                               borderRadius:
@@ -179,6 +171,78 @@ class HomePage extends StatelessWidget {
                                 color: Colors.grey,
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 30, right: 30),
+                        child: Container(
+                          height: 130,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(35)),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              children: [
+                                Container(
+                                  height: 65,
+                                  width: 65,
+                                  decoration: BoxDecoration(
+                                      color: Colors.blue,
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(50))),
+                                  child: Icon(
+                                    Icons.check_circle_outline,
+                                    color: Colors.white,
+                                    size: 55,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        'Lorem',
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 30,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Text(
+                                        ' Hello, how are you? I am fine.\n What are you doing?',
+                                        style: TextStyle(
+                                            color: Colors.grey,
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 15),
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        '-\$567',
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 30,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Text(
+                                        'Paid',
+                                        style: TextStyle(
+                                            color: Colors.grey,
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       )
