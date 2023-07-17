@@ -33,15 +33,61 @@ class Profile extends StatelessWidget {
             SizedBox(
               height: 25,
             ),
-            Container(
-              height: 540,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25),
-                  image: DecorationImage(
-                      image: NetworkImage(
-                          'https://img.freepik.com/premium-photo/lovely-young-blonde-woman-standing-isolated-pink-wall-celebrating_171337-97455.jpg'),
-                      fit: BoxFit.cover)),
+            Stack(
+              children: [
+                Positioned(
+                  child: Container(
+                    height: 540,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        image: DecorationImage(
+                            image: NetworkImage(
+                                'https://img.freepik.com/premium-photo/lovely-young-blonde-woman-standing-isolated-pink-wall-celebrating_171337-97455.jpg'),
+                            fit: BoxFit.cover)),
+
+                    // ),
+                  ),
+                ),
+                Positioned(
+                  top: 440,
+                  left: 35,
+                  child: Container(
+                    height: 80,
+                    width: 320,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(20),
+                            bottomLeft: Radius.circular(20)),
+                        color: Color.fromARGB(206, 255, 255, 255)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(14.0),
+                      child: Column(
+                        children: [
+                          Align(
+                            alignment: Alignment.bottomLeft,
+                            child: Text(
+                              'Malena Veronica, 23',
+                              style: TextStyle(
+                                  fontSize: 22, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          Align(
+                            alignment: Alignment.bottomLeft,
+                            child: Text(
+                              'Fashion Designer at Victoria\'s Secret',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.grey),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                )
+              ],
             )
           ],
         ),
