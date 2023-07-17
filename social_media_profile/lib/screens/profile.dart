@@ -8,7 +8,7 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 241, 237, 236),
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: Padding(
         padding: const EdgeInsets.only(top: 45, right: 20, left: 20),
         child: Column(
@@ -88,6 +88,50 @@ class Profile extends StatelessWidget {
                   ),
                 )
               ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 30, left: 25, right: 25),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    height: 65,
+                    width: 65,
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 236, 234, 234),
+                        borderRadius: BorderRadius.circular(50)),
+                    child: Icon(
+                      Icons.close,
+                      size: 35,
+                      color: const Color.fromARGB(255, 124, 123, 123),
+                    ),
+                  ),
+                  Container(
+                    height: 65,
+                    width: 65,
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 236, 234, 234),
+                        borderRadius: BorderRadius.circular(50)),
+                    child: Icon(
+                      Icons.star,
+                      size: 30,
+                      color: Color.fromARGB(255, 47, 124, 197),
+                    ),
+                  ),
+                  Container(
+                    height: 65,
+                    width: 65,
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 236, 234, 234),
+                        borderRadius: BorderRadius.circular(50)),
+                    child: Icon(
+                      Icons.favorite,
+                      size: 30,
+                      color: Color.fromARGB(255, 245, 4, 4),
+                    ),
+                  ),
+                ],
+              ),
             )
           ],
         ),
