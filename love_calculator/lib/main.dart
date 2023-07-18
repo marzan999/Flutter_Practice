@@ -1,11 +1,18 @@
 // ignore_for_file: deprecated_member_use, prefer_const_constructors, unused_local_variable, prefer_const_literals_to_create_immutables
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() => runApp(MyApp());
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -49,6 +56,14 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     final percentage = _animationController.value * 100;
 
+    void addData() async {
+      await FirebaseFirestore.instance.collection('users').add({
+        'hisName': _hisname.text,
+        'herName': _hername.text,
+        'percetage': percentage
+      });
+    }
+
     void press() {
       final text1 = _hisname.text;
       final text2 = _hername.text;
@@ -60,23 +75,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               return AlertDialog(
                 title: Column(
                   children: [
-                    // Container(
-                    //   alignment: Alignment.center,
-                    //   child: LiquidCustomProgressIndicator(
-                    //     direction: Axis.vertical,
-                    //     shapePath: _buildHeartPath(),
-                    //     center: Text(
-                    //       '${percentage.toStringAsFixed(0)}%',
-                    //       style: TextStyle(
-                    //           fontSize: 20,
-                    //           fontWeight: FontWeight.bold,
-                    //           color: Colors.black),
-                    //     ),
-                    //     valueColor: AlwaysStoppedAnimation(Colors.red),
-                    //     value: _animationController.value,
-                    //     backgroundColor: Colors.pinkAccent,
-                    //   ),
-                    // ),
                     Center(
                       child: Text(
                         '${percentage.toStringAsFixed(0)}%',
@@ -86,32 +84,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                             color: Colors.black),
                       ),
                     ),
-                    // Stack(
-                    //   children: [
-                    //     Positioned(
-                    //       child: Center(
-                    //         child: Icon(
-                    //           Icons.favorite,
-                    //           size: 160,
-                    //           color: const Color.fromARGB(255, 207, 66, 113),
-                    //         ),
-                    //       ),
-                    //     ),
-                    //     Positioned(
-                    //       top: 30,
-                    //       left: 8,
-                    //       child: Center(
-                    //         child: Text(
-                    //           '${percentage.toStringAsFixed(0)}%',
-                    //           style: TextStyle(
-                    //               fontSize: 50,
-                    //               fontWeight: FontWeight.bold,
-                    //               color: Colors.black),
-                    //         ),
-                    //       ),
-                    //     )
-                    //   ],
-                    // ),
                     SizedBox(
                       height: 25,
                     ),
@@ -210,7 +182,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 height: MediaQuery.of(context).size.height * 0.2,
               ),
               InkWell(
-                onTap: () => press(),
+                onTap: () => [addData(), press()],
+
                 // _auth.createUserWithEmailAndPassword(email: email, password: password);
                 child: Container(
                   alignment: Alignment.center,

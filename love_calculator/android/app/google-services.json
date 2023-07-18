@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "924206859144",
+    "project_id": "love-cc7bc",
+    "storage_bucket": "love-cc7bc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:924206859144:android:a518813300e6ff8ce5f03d",
+        "android_client_info": {
+          "package_name": "com.example.love_calculator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "924206859144-9mjhg8ttsg4alggci6qe0sbbc2mos4dh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6fDQ-z6Jc5T2rEP5YyrOdPzJBnNcHpwo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "924206859144-9mjhg8ttsg4alggci6qe0sbbc2mos4dh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

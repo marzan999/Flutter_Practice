@@ -37,6 +37,8 @@ dependencies:
   liquid_progress_indicator:
   font_awesome_flutter:
   google_fonts: ^5.1.0
+  cloud_firestore: ^4.8.3
+  firebase_core: ^2.15.0
 
 dev_dependencies:
   flutter_test:
