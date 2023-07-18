@@ -3,6 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() => runApp(MyApp());
 
@@ -146,22 +147,22 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
       resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
-          Image.network(
-            'https://i.pinimg.com/originals/1f/eb/81/1feb816930ae264c2b2a55e099cc1352.jpg',
+          Image.asset(
+            'images/2.jpg',
             height: double.infinity,
             fit: BoxFit.cover,
           ),
           Column(
             children: [
               SizedBox(
-                height: 100,
+                height: MediaQuery.of(context).size.height * 0.2,
               ),
               Text(
                 'Calculate your Love',
-                // style: GoogleFonts.rubikGlitch(fontSize: 45),
+                style: GoogleFonts.rubikGlitch(fontSize: 35),
               ),
               SizedBox(
-                height: 60,
+                height: MediaQuery.of(context).size.height * 0.2,
               ),
               Container(
                 margin: EdgeInsets.only(left: 25, right: 25),
@@ -184,7 +185,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 ),
               ),
               SizedBox(
-                height: 25,
+                height: 20,
               ),
               Container(
                 margin: EdgeInsets.only(left: 25, right: 25),
@@ -206,7 +207,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 ),
               ),
               SizedBox(
-                height: 300,
+                height: MediaQuery.of(context).size.height * 0.2,
               ),
               InkWell(
                 onTap: () => press(),
