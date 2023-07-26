@@ -1,13 +1,13 @@
-import 'package:darkmode_normalmode/screens/dark_screen.dart';
+import 'package:darkmode_normalmode/screens/normal_screen.dart';
 import 'package:flutter/material.dart';
 
-class Normal_Mode extends StatelessWidget {
-  const Normal_Mode({super.key});
+class Dark_Mode extends StatelessWidget {
+  const Dark_Mode({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 224, 221, 221),
+      backgroundColor: Color.fromARGB(255, 7, 7, 7),
       body: Padding(
         padding: const EdgeInsets.only(top: 55, right: 12, left: 12),
         child: Column(
@@ -28,7 +28,10 @@ class Normal_Mode extends StatelessWidget {
                 ),
                 Text(
                   'Display & Brightness',
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
                 ),
               ],
             ),
@@ -44,7 +47,7 @@ class Normal_Mode extends StatelessWidget {
               height: 240,
               width: double.infinity,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Color.fromARGB(186, 73, 72, 72),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Column(
@@ -71,23 +74,26 @@ class Normal_Mode extends StatelessWidget {
                             ),
                             Text(
                               "Light",
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
                             ),
                             SizedBox(
                               height: 6,
                             ),
-                            Container(
-                              height: 20,
-                              width: 20,
-                              child: Center(
-                                  child: Icon(
-                                Icons.check_outlined,
-                                size: 16,
-                                color: Colors.white,
-                              )),
-                              decoration: BoxDecoration(
-                                  color: Colors.blue,
-                                  borderRadius: BorderRadius.circular(15)),
+                            InkWell(
+                              onTap: () {
+                                Navigator.of(context).pop(Normal_Mode());
+                              },
+                              child: Container(
+                                height: 20,
+                                width: 20,
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: Colors.grey, width: 2),
+                                    color: Colors.transparent,
+                                    borderRadius: BorderRadius.circular(15)),
+                              ),
                             ),
                           ],
                         ),
@@ -108,25 +114,25 @@ class Normal_Mode extends StatelessWidget {
                             ),
                             Text(
                               "Dark",
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
                             ),
                             SizedBox(
                               height: 6,
                             ),
-                            InkWell(
-                              onTap: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => Dark_Mode()));
-                              },
-                              child: Container(
-                                height: 20,
-                                width: 20,
-                                decoration: BoxDecoration(
-                                    border: Border.all(
-                                        color: Colors.grey, width: 2),
-                                    color: Colors.transparent,
-                                    borderRadius: BorderRadius.circular(15)),
-                              ),
+                            Container(
+                              height: 20,
+                              width: 20,
+                              child: Center(
+                                  child: Icon(
+                                Icons.check_outlined,
+                                size: 16,
+                                color: Colors.white,
+                              )),
+                              decoration: BoxDecoration(
+                                  color: Colors.blue,
+                                  borderRadius: BorderRadius.circular(15)),
                             ),
                           ],
                         ),
@@ -148,7 +154,9 @@ class Normal_Mode extends StatelessWidget {
                       children: [
                         Text('Autometic',
                             style: TextStyle(
-                                fontSize: 22, fontWeight: FontWeight.bold)),
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white)),
                         Padding(
                           padding: const EdgeInsets.only(right: 20),
                           child: Stack(
@@ -188,7 +196,7 @@ class Normal_Mode extends StatelessWidget {
               height: 120,
               width: double.infinity,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Color.fromARGB(186, 73, 72, 72),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Column(
@@ -201,7 +209,9 @@ class Normal_Mode extends StatelessWidget {
                       children: [
                         Text('Text Size',
                             style: TextStyle(
-                                fontSize: 22, fontWeight: FontWeight.bold)),
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white)),
                         Icon(
                           Icons.arrow_forward_ios,
                           color: Colors.grey,
@@ -227,7 +237,9 @@ class Normal_Mode extends StatelessWidget {
                       children: [
                         Text('Bold Text',
                             style: TextStyle(
-                                fontSize: 22, fontWeight: FontWeight.bold)),
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white)),
                         Padding(
                           padding: const EdgeInsets.only(right: 20),
                           child: Stack(
@@ -272,7 +284,7 @@ class Normal_Mode extends StatelessWidget {
               height: 120,
               width: double.infinity,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Color.fromARGB(186, 73, 72, 72),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Column(
@@ -346,7 +358,9 @@ class Normal_Mode extends StatelessWidget {
                       children: [
                         Text('True Tone',
                             style: TextStyle(
-                                fontSize: 22, fontWeight: FontWeight.bold)),
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white)),
                         Padding(
                           padding: const EdgeInsets.only(right: 20),
                           child: Stack(
@@ -394,7 +408,8 @@ class Normal_Mode extends StatelessWidget {
               height: 50,
               width: double.infinity,
               decoration: BoxDecoration(
-                  color: Colors.white, borderRadius: BorderRadius.circular(20)),
+                  color: Color.fromARGB(186, 73, 72, 72),
+                  borderRadius: BorderRadius.circular(20)),
               child: Padding(
                 padding: const EdgeInsets.only(right: 20, left: 20),
                 child: Row(
@@ -402,13 +417,14 @@ class Normal_Mode extends StatelessWidget {
                   children: [
                     Text('Night Shift',
                         style: TextStyle(
-                            fontSize: 22, fontWeight: FontWeight.bold)),
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white)),
                     Row(
                       children: [
                         Text('Off  ',
-                            style: TextStyle(
-                              fontSize: 22,
-                            )),
+                            style:
+                                TextStyle(fontSize: 22, color: Colors.white)),
                         Icon(
                           Icons.arrow_forward_ios,
                           color: Colors.grey,
