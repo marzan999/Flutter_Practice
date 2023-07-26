@@ -6,9 +6,9 @@ class Normal_Mode extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(244, 224, 221, 221),
+      backgroundColor: Color.fromARGB(255, 224, 221, 221),
       body: Padding(
-        padding: const EdgeInsets.only(top: 35, right: 12, left: 12),
+        padding: const EdgeInsets.only(top: 55, right: 12, left: 12),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -20,19 +20,19 @@ class Normal_Mode extends StatelessWidget {
                 ),
                 Text(
                   'Settings',
-                  style: TextStyle(fontSize: 20, color: Colors.blue),
+                  style: TextStyle(fontSize: 22, color: Colors.blue),
                 ),
                 SizedBox(
                   width: 12,
                 ),
                 Text(
                   'Display & Brightness',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
             SizedBox(
-              height: 35,
+              height: 55,
             ),
             Text('    APPEARANCE',
                 style: TextStyle(fontSize: 15, color: Colors.grey)),
@@ -257,6 +257,165 @@ class Normal_Mode extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(
+              height: 30,
+            ),
+            Text('    BRIGHTNESS',
+                style: TextStyle(fontSize: 15, color: Colors.grey)),
+            SizedBox(
+              height: 5,
+            ),
+            Container(
+              height: 120,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Column(
+                children: [
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(left: 20, right: 20, top: 15),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Icon(
+                          Icons.brightness_low_outlined,
+                          color: Colors.grey,
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Row(
+                          children: [
+                            Stack(
+                              children: [
+                                Container(
+                                  height: 4,
+                                  width: 100,
+                                  color: Color.fromARGB(255, 8, 30, 235),
+                                ),
+                              ],
+                            ),
+                            Positioned(
+                              right: 30,
+                              child: Container(
+                                height: 30,
+                                width: 30,
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 214, 204, 204),
+                                    borderRadius: BorderRadius.circular(30)),
+                              ),
+                            )
+                          ],
+                        ),
+                        Container(
+                          height: 4,
+                          width: 115,
+                          color: const Color.fromARGB(255, 212, 211, 211),
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Icon(
+                          Icons.brightness_high_outlined,
+                          color: Colors.grey,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 15),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20),
+                    child: Container(
+                      height: 2,
+                      width: double.infinity,
+                      color: const Color.fromARGB(255, 212, 211, 211),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20, top: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('True Tone',
+                            style: TextStyle(
+                                fontSize: 22, fontWeight: FontWeight.bold)),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 20),
+                          child: Stack(
+                            children: [
+                              Container(
+                                height: 35,
+                                width: 60,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: Color.fromARGB(157, 41, 202, 82)),
+                              ),
+                              Positioned(
+                                right: 2,
+                                top: 1,
+                                child: Container(
+                                  height: 32,
+                                  width: 32,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(30),
+                                      color: Colors.white),
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 12,
+            ),
+            Text(
+              'Automatically adapt iPhone display based on ambient lighting conditions to make colors appear consistent in different environments.',
+              style: TextStyle(
+                color: Color.fromARGB(255, 114, 113, 113),
+              ),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Container(
+              height: 50,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(20)),
+              child: Padding(
+                padding: const EdgeInsets.only(right: 20, left: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('Night Shift',
+                        style: TextStyle(
+                            fontSize: 22, fontWeight: FontWeight.bold)),
+                    Row(
+                      children: [
+                        Text('Off  ',
+                            style: TextStyle(
+                              fontSize: 22,
+                            )),
+                        Icon(
+                          Icons.arrow_forward_ios,
+                          color: Colors.grey,
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),
