@@ -115,14 +115,10 @@ class Normal_Mode extends StatelessWidget {
                             Container(
                               height: 20,
                               width: 20,
-                              child: Center(
-                                  child: Icon(
-                                Icons.check_outlined,
-                                size: 16,
-                                color: Colors.white,
-                              )),
                               decoration: BoxDecoration(
-                                  color: Colors.blue,
+                                  border:
+                                      Border.all(color: Colors.grey, width: 2),
+                                  color: Colors.transparent,
                                   borderRadius: BorderRadius.circular(15)),
                             ),
                           ],
