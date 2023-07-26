@@ -129,9 +129,12 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.2,
               ),
-              Text(
-                'Calculate your Love',
-                style: GoogleFonts.rubikGlitch(fontSize: 35),
+              FittedBox(
+                child: Text(
+                  'Calculate your Love',
+                  style: GoogleFonts.rubikGlitch(
+                      fontSize: 35, color: Color.fromARGB(255, 226, 50, 108)),
+                ),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.2,
@@ -139,21 +142,25 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               Container(
                 margin: EdgeInsets.only(left: 25, right: 25),
                 decoration: BoxDecoration(
+                    color: Color.fromARGB(110, 184, 184, 156),
                     borderRadius: BorderRadius.circular(25),
-                    border: Border.all(width: 2)),
+                    border: Border.all(
+                      width: 4,
+                    )),
                 child: TextField(
                   controller: _hisname,
                   decoration: InputDecoration(
-                      prefixIcon: Icon(FontAwesomeIcons.male),
-                      hintStyle: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w800,
-                        fontStyle: FontStyle.italic,
-                        fontSize: 18,
-                      ),
-                      hintText: "HIS NAME",
-                      contentPadding: EdgeInsets.only(left: 20, top: 12),
-                      border: InputBorder.none),
+                    prefixIcon: Icon(FontAwesomeIcons.male),
+                    hintStyle: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w800,
+                      fontStyle: FontStyle.italic,
+                      fontSize: 18,
+                    ),
+                    hintText: "HIS NAME",
+                    contentPadding: EdgeInsets.only(left: 20, top: 12),
+                    border: InputBorder.none,
+                  ),
                 ),
               ),
               SizedBox(
@@ -162,11 +169,14 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               Container(
                 margin: EdgeInsets.only(left: 25, right: 25),
                 decoration: BoxDecoration(
+                    color: Color.fromARGB(110, 184, 184, 156),
                     borderRadius: BorderRadius.circular(35),
-                    border: Border.all(width: 2)),
+                    border: Border.all(width: 4)),
                 child: TextField(
                   controller: _hername,
                   decoration: InputDecoration(
+                      // fillColor: Colors.amber,
+                      // filled: true,
                       prefixIcon: Icon(FontAwesomeIcons.female),
                       hintStyle: TextStyle(
                           color: Colors.white,
@@ -190,15 +200,16 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   height: 45,
                   width: 150,
                   decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 127, 155, 179),
+                      color: Color.fromARGB(137, 189, 171, 181),
                       borderRadius: BorderRadius.circular(25),
-                      border: Border.all(width: 2, color: Colors.yellow)),
+                      border: Border.all(width: 4, color: Colors.yellow)),
                   child: Text(
                     "Calculate",
                     style: TextStyle(
-                        color: Colors.white,
+                        color: const Color.fromARGB(255, 54, 52, 52),
                         fontStyle: FontStyle.italic,
-                        fontSize: 18),
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
               )
