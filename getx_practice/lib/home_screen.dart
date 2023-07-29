@@ -15,9 +15,29 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Center(child: Text('GetX')),
       ),
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        Get.snackbar('Name', 'My name is Marzan');
-      }),
+      body: Column(
+        children: [
+          Card(
+            child: ListTile(
+              title: Text('Name'),
+              subtitle: Text('My name is Marzan'),
+              onTap: () {
+                Get.defaultDialog(
+                    title: 'Exit',
+                    middleText: 'Are you quit?',
+                    // textConfirm: 'Yes',
+                    // textCancel: 'No');
+                    confirm: TextButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        child: Text('Yes')),
+                    cancel: TextButton(onPressed: () {}, child: Text('No')));
+              },
+            ),
+          )
+        ],
+      ),
     );
   }
 }
