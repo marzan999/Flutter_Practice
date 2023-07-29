@@ -19,8 +19,8 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Card(
             child: ListTile(
-              title: Text('Name'),
-              subtitle: Text('My name is Marzan'),
+              title: Text('Dialog Box'),
+              subtitle: Text('.................'),
               onTap: () {
                 Get.defaultDialog(
                     title: 'Exit',
@@ -35,7 +35,35 @@ class _HomeScreenState extends State<HomeScreen> {
                     cancel: TextButton(onPressed: () {}, child: Text('No')));
               },
             ),
-          )
+          ),
+          Card(
+            child: ListTile(
+              title: Text('Botton Sheet'),
+              subtitle: Text('---------------'),
+              onTap: () {
+                Get.bottomSheet(Container(
+                  child: Column(
+                    children: [
+                      ListTile(
+                        leading: Icon(Icons.light_mode),
+                        title: Text('Light Theme'),
+                        onTap: () {
+                          Get.changeTheme(ThemeData.light());
+                        },
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.dark_mode),
+                        title: Text('Dark Theme'),
+                        onTap: () {
+                          Get.changeTheme(ThemeData.dark());
+                        },
+                      ),
+                    ],
+                  ),
+                ));
+              },
+            ),
+          ),
         ],
       ),
     );
