@@ -12,26 +12,25 @@ class Info extends StatefulWidget {
 }
 
 class _InfoState extends State<Info> {
-  List<Product> allData = [];
-
   Future<List<Product>> getProducts() async {
     final response =
         await http.get(Uri.parse('https://fakestoreapi.com/products'));
     var data = jsonDecode(response.body.toString());
-
     if (response.statusCode == 200) {
+      List<Product> allData = []; // Move this declaration inside the method
       for (Map i in data) {
         Product product = Product(
           id: i["id"],
           title: i["title"],
-          price: i["price"],
+          price: i["price"].toString(),
           description: i["description"],
         );
+
         allData.add(product);
       }
       return allData;
     } else {
-      return allData;
+      throw Exception('Failed to load products');
     }
   }
 
@@ -42,12 +41,38 @@ class _InfoState extends State<Info> {
       appBar: AppBar(
         title: Text('API Call'),
       ),
+      body: Column(
+        children: [
+          Expanded(
+            child: FutureBuilder<List<Product>>(
+              future: getProducts(),
+              builder: (context, snapshot) {
+                return ListView.builder(
+                  itemCount: snapshot.data?.length ?? 0,
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      title: Text(snapshot.data![index].price.toString()),
+                    );
+                  },
+                );
+              },
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
 
 class Product {
-  String? id, title, price, description;
+  String? title, description;
+  int? id;
+  String? price;
 
-  Product({required id, required title, required price, required description});
+  Product({
+    required this.id,
+    required this.title,
+    required this.price,
+    required this.description,
+  });
 }
