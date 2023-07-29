@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(builder: (context, child) {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Home(),
+        home: HomePage(),
       );
     });
   }

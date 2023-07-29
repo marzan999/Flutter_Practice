@@ -1,4 +1,7 @@
+// ignore_for_file: use_build_context_synchronously, prefer_const_constructors
+
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:social_media_profile/screens/profile.dart';
 
 void main() {
@@ -10,9 +13,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Profile(),
-    );
+    return ScreenUtilInit(builder: (context, child) {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Profile(),
+      );
+    });
   }
 }
