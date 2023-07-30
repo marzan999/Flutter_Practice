@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_practice/page_one.dart';
+import 'package:getx_practice/page_two.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class PageOne extends StatefulWidget {
+  const PageOne({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<PageOne> createState() => _PageOneState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _PageOneState extends State<PageOne> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Center(child: Text('GetX')),
+          title: Center(child: Text('Page - 1')),
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -23,9 +23,9 @@ class _HomeScreenState extends State<HomeScreen> {
             Center(
                 child: TextButton(
                     onPressed: () {
-                      Get.to(PageOne());
+                      Get.to(PageTwo());
                     },
-                    child: Text('Go to Page - 1')))
+                    child: Text('Go to Page - 2')))
           ],
         ));
   }
