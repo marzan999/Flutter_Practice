@@ -22,21 +22,12 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: Column(
           children: [
-            Obx(
-              () => Container(
-                height: 300,
-                width: 300,
-                color: Colors.teal
-                    .withOpacity(secondScreenController.opacity.value),
-              ),
-            ),
-            Obx(
-              () => Slider(
-                  value: secondScreenController.opacity.value,
-                  onChanged: (value) {
-                    secondScreenController.setOpacity(value);
-                  }),
-            ),
+            Text('Notification'),
+            Obx(() => Switch(
+                value: secondScreenController.notification.value,
+                onChanged: (value) {
+                  secondScreenController.setNotification(value);
+                })),
           ],
         ));
   }
