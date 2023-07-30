@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class PageTwo extends StatefulWidget {
-  const PageTwo({super.key});
+class PageTwo extends StatelessWidget {
+  PageTwo(this.name);
+  var name;
 
-  @override
-  State<PageTwo> createState() => _PageTwoState();
-}
-
-class _PageTwoState extends State<PageTwo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,6 +15,9 @@ class _PageTwoState extends State<PageTwo> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Text(
+              'hello, $name',
+            ),
             Center(
                 child: TextButton(
                     onPressed: () {
