@@ -11,8 +11,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  SecondScreenController secondScreenController =
-      Get.put(SecondScreenController());
+  List<String> fruitName = ['Apple', 'Banana', 'Lichi', 'Pine-Apple'];
+  List<String> tempfruitName = [];
 
   @override
   Widget build(BuildContext context) {
@@ -20,15 +20,28 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           title: Center(child: Text('GetX')),
         ),
-        body: Column(
-          children: [
-            Text('Notification'),
-            Obx(() => Switch(
-                value: secondScreenController.notification.value,
-                onChanged: (value) {
-                  secondScreenController.setNotification(value);
-                })),
-          ],
-        ));
+        body: ListView.builder(
+            itemCount: fruitName.length,
+            itemBuilder: (context, index) {
+              return Card(
+                child: ListTile(
+                  onTap: () {
+                    if (tempfruitName.contains(fruitName[index].toString())) {
+                      tempfruitName.remove(fruitName[index].toString());
+                    } else {
+                      tempfruitName.add(fruitName[index].toString());
+                    }
+                    setState(() {});
+                  },
+                  title: Text(fruitName[index].toString()),
+                  trailing: Icon(
+                    Icons.favorite,
+                    color: tempfruitName.contains(fruitName[index].toString())
+                        ? Colors.red
+                        : Colors.white,
+                  ),
+                ),
+              );
+            }));
   }
 }
