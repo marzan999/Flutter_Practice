@@ -1,50 +1,46 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:getx_practice/favourite_controller.dart';
+import 'package:getx_practice/image_picker_controller.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class ImagePickerScreen extends StatefulWidget {
+  const ImagePickerScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<ImagePickerScreen> createState() => _ImagePickerScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
-  FavouriteController controller = Get.put(FavouriteController());
+class _ImagePickerScreenState extends State<ImagePickerScreen> {
+  final controller = Get.put(ImagePickerController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Center(child: Text('GetX')),
-        ),
-        body: ListView.builder(
-            itemCount: controller.fruitName.length,
-            itemBuilder: (context, index) {
-              return Card(
-                child: ListTile(
-                    onTap: () {
-                      if (controller.tempfruitName
-                          .contains(controller.fruitName[index].toString())) {
-                        controller.removeFromFavourite(
-                            controller.fruitName[index].toString());
-                      } else {
-                        controller.addToFavourite(
-                            controller.fruitName[index].toString());
-                      }
-                    },
-                    title: Text(controller.fruitName[index].toString()),
-                    trailing: Obx(
-                      () => Icon(
-                        Icons.favorite,
-                        color: controller.tempfruitName.contains(
-                                controller.fruitName[index].toString())
-                            ? Colors.red
-                            : Colors.white,
-                      ),
-                    )),
-              );
-            }));
+      body: Obx(() {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Center(
+              child: CircleAvatar(
+                radius: 200,
+                backgroundColor: Colors.grey,
+                backgroundImage: controller.selectedImagePath.isNotEmpty
+                    ? FileImage(File(controller.selectedImagePath.toString()))
+                    : null,
+              ),
+            ),
+            TextButton.icon(
+              onPressed: () {
+                controller.getImage();
+              },
+              icon: const Icon(Icons.image),
+              label: const Text('Add Image'),
+            ),
+          ],
+        );
+      }),
+    );
   }
 }
