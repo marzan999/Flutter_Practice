@@ -100,34 +100,21 @@ class _HomePageState extends State<HomePage> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(35),
                             // color: const Color.fromARGB(255, 62, 166, 170),
-                            color: Colors.white
-                            ),
-                            // child: Container(
-                            //   height: 10,
-                            //   width: 10,
-                            //   color: Colors.black,
-                            // ),
-                        //child: Text('${product['price']}')
-                        // child: CircleAvatar(
-                        //   //radius: 6,
-                        //   backgroundImage: NetworkImage(product['image']),
-                        // ),
-                        // child: Container(
-                        //   child: Image.network(
-                        //     product['image'],
-                        //     height: 25.h,
-                        //     width: 25.w,
-                        //     fit: BoxFit.cover,
-                        //   ),
-                        // ),
-                        // child: Container(
-                        //   height: 25.h,
-                        //   width: 25.w,
-                        //   decoration: BoxDecoration(
-                        //     borderRadius: BorderRadius.circular(50),
-                        //     image: DecorationImage(image: NetworkImage(product['image']), fit: BoxFit.cover)
-                        //   ),
-                        // ),
+                            color: Colors.white),
+                        child: Container(
+                          height: 10,
+                          width: 10,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Colors.pink,
+                              image: DecorationImage(
+                                  image: NetworkImage(product['image']),
+                                  fit: BoxFit.cover)),
+                          margin: EdgeInsets.only(
+                              right: 25, left: 25, top: 2, bottom: 2),
+
+                          // ),
+                        ),
                       );
                     },
                     separatorBuilder: (_, index) => SizedBox(
@@ -158,20 +145,96 @@ class _HomePageState extends State<HomePage> {
               //   ),
               // )
 
+              //         Container(
+              //   width: double.infinity,
+              //   height: 400,
+              //   decoration: BoxDecoration(
+              //     borderRadius: BorderRadius.circular(50), color: Colors.black
+              //   ),
+              //    child: Container(
+              //     width: 200,
+              //     height: 200,
+              //     decoration: BoxDecoration(borderRadius: BorderRadius.circular(30), color: Colors.red),
+              //   ),
 
-              Container(
-        width: double.infinity,
-        height: 400,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(50), color: Colors.black
+              // ),
+
+              // Container(
+              //   width: 200,
+              //   height: 200,
+              //   decoration: BoxDecoration(
+              //     color: Colors.blue, // Outer container color
+              //     borderRadius: BorderRadius.circular(35),
+              //     boxShadow: [
+              //       BoxShadow(
+              //         color: Colors.black.withOpacity(0.3),
+              //         spreadRadius: 5,
+              //         blurRadius: 10,
+              //       ),
+              //     ],
+              //   ),
+              //   child: Container(
+              //     margin: EdgeInsets.all(30),
+              //     decoration: BoxDecoration(
+              //       color: Colors.white, // Inner container color
+              //       borderRadius: BorderRadius.circular(30),
+              //     ),
+              //     child: Center(
+              //       child: Text(
+              //         'Nested Container',
+              //         style:
+              //             TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              //       ),
+              //     ),
+              //   ),
+              // ),
+              SizedBox(
+                height: 20.h,
+              ),
+              Text(
+                'Recommended',
+                style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              // Container(
+              //   child: GridView.builder(
+              //       shrinkWrap: true,
+              //       physics: NeverScrollableScrollPhysics(),
+              //       gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+              //           maxCrossAxisExtent: 200,
+              //           crossAxisSpacing: 20,
+              //           mainAxisSpacing: 40),
+              //           itemCount: products.length,
+              //       itemBuilder: (BuildContext ctx, index) {
+              //         return Container(
+                        
+              //         );
+              //       }),
+              // )
+               GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, // Number of columns in the grid
+            crossAxisSpacing: 10.0, // Spacing between columns
+            mainAxisSpacing: 10.0, // Spacing between rows
+          ),
+          itemCount: products.length,
+          itemBuilder: (context, index) {
+            return Container(
+              color: Colors.blue,
+              child: Center(
+                // child: Text(
+                //  '',
+                //   style: TextStyle(color: Colors.white, fontSize: 18.0),
+                // ),
+                child: Image.network({}),
+                
+                
+              ),
+            );
+          },
         ),
-         child: Container(
-          width: 200,
-          height: 200,
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(30), color: Colors.red),
-        ),
-       
-      ),
             ],
           ),
         ),
@@ -184,10 +247,29 @@ class _HomePageState extends State<HomePage> {
             backgroundColor: Color.fromARGB(255, 62, 166, 170),
             padding: EdgeInsets.all(15).r,
             tabs: [
-              GButton(icon: Icons.home, hoverColor: Colors.grey, iconActiveColor: Colors.black, iconColor: Colors.white,),
-              GButton(icon: Icons.search, hoverColor: Colors.grey,iconActiveColor: Colors.black, iconColor: Colors.white),
-              GButton(icon: Icons.favorite_border_outlined,hoverColor: Colors.grey,iconActiveColor: Colors.black, iconColor: Colors.white,),
-              GButton(icon: Icons.notifications,hoverColor: Colors.grey,iconActiveColor: Colors.black, iconColor: Colors.white,),
+              GButton(
+                icon: Icons.home,
+                hoverColor: Colors.grey,
+                iconActiveColor: Colors.black,
+                iconColor: Colors.white,
+              ),
+              GButton(
+                  icon: Icons.search,
+                  hoverColor: Colors.grey,
+                  iconActiveColor: Colors.black,
+                  iconColor: Colors.white),
+              GButton(
+                icon: Icons.favorite_border_outlined,
+                hoverColor: Colors.grey,
+                iconActiveColor: Colors.black,
+                iconColor: Colors.white,
+              ),
+              GButton(
+                icon: Icons.notifications,
+                hoverColor: Colors.grey,
+                iconActiveColor: Colors.black,
+                iconColor: Colors.white,
+              ),
             ],
           ),
         ),
@@ -195,3 +277,9 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+
+
+
+    
+     
